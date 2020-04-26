@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Homework</title>
+</head>
+<body>
+
+    <button id="myBtn"> Try it </button>
+    
+    <button class="myTogBtn"> Toggle Button </button>
+
+    <script>
+
+        let tryButton = document.getElementById("myBtn");
+        const firstLabel = "myBtn";
+        let toggButton = document.getElementById("myTogBtn");
+    
+        function clickHandler(event){
+            console.log("Hey, you just pressed Try it button");
+            alert("Hi, how are you?");
+        }
+
+        function mouseOverHandler(event){
+            console.log("Mouse here!");
+            tryButton.innerText = "What just happened?"
+            tryButton.classList.add('myStyle1');
+            tryButton.classList.add('myStyle2');
+        }
+
+        function mouseLeaveHandler(event){
+            console.log("Mouse just left that button!");
+            tryButton.innerText = "What just happened?"
+            tryButton.classList.remove('myStyle1');
+            tryButton.classList.remove('myStyle2');
+        }
+    
+      
+        tryButton.addEventListener("click", clickHandler);
+        tryButton.addEventListener("mouseover", mouseOverHandler);
+        tryButton.addEventListener("mouseleave", mouseLeaveHandler);
+
+
+   </script>
+
+
+</body>
+</html>

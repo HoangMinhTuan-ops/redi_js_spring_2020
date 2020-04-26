@@ -1,0 +1,54 @@
+#myBtn {
+    background-color: burlywood;
+    margin: 0;
+    padding: 0.5em 2em;
+    font-size: 30px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.myStyle1{
+    background-color: chocolate;
+    width: 300px;
+    height: 200px;
+    padding: 15px;
+    border: 1px solid black;
+    opacity: 1;
+
+}
+
+.myStyle2{
+    background-color: #3ee955;
+    width: 700px;
+    height: 600px;
+    color: #2f2faa;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+}
+
+.myTogBtn {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.myTogBtn:hover {
+    background-color: #4CAF50
+}
+
+.myTogBtn:active {
+    background-color: #005803;
+    box-shadow: 0 4px #494949;
+    transform: translateY(4px);
+  }
+
