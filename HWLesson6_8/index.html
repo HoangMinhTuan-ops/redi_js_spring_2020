@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>E-Store</title>
+</head>
+<body>
+    <!-- //navbar -->
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Products
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="images/bosch.jpg">Bosch</a>
+                <a href="images/rowenta.jpg">Rowenta</a>
+                <a href="images/dyson.jpg">Dyson</a>
+                <a href="images/aeg.jpg">AEG</a>
+            </div>
+        </div>
+        
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <!-- Live Chat button -->
+    <button class="open-button" onclick="openForm()">Live Chat</button>
+
+    <div class="chat-popup" id="myForm">
+        <form action="/action-page.php" class="form-container">
+            <h2>Support</h2>
+
+            <label for="msg"><b>Message</b></label>
+            <textarea placeholder="Type something.." name="msg" required></textarea>
+
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+
+    <!-- //products -->
+    <div class="wrapper">
+        <div class="nestedCleaner">
+            <div><img class="image" src="./images/bosch.jpg"></div>
+            <div class="description"><p id="bosch"></p>
+                <input class="productBtn" type="button" id="addBoschToCart" value="Add to shopping cart">
+            </div>
+            
+        </div>
+
+        <div class="nestedCleaner">
+            <div><img class="image" src="./images/rowenta.jpg"></div>
+            <div class="description"><p id="rowenta"></p>
+                <input class="productBtn" type="button" id="addRowentaToCart" value="Add to shopping cart">
+            </div>
+        </div>
+
+        <div class="nestedCleaner">
+            <div><img class="image" src="./images/dyson.jpg"></div>
+            <div class="description"><p id="dyson"></p>
+                <input class="productBtn" type="button" id="addDysonToCart" value="Add to shopping cart">
+            </div>
+        </div>
+
+        <div class="nestedCleaner">
+            <div><img class="image" src="./images/aeg.jpg"></div>
+            <div class="description"><p id="aeg"></p>
+                <input class="productBtn" type="button" id="addAegToCart" value="Add to shopping cart">
+            </div>
+        </div>
+
+        <h3 class="cartDisplay">Shopping Cart</h3>
+        <input 
+            class="productBtn"
+            type="button" 
+            id="showShoppingCart"
+            value="Show Shopping Cart Products"
+            style ="width: 200px"
+        />
+        <div id="shoppingCart">
+            <!-- Display shopping cart products -->
+        </div>
+        
+        <h3 class="priceDisplay">Total Price</h3>
+        <span id="total">
+            <!-- show total price -->
+        </span>
+        <input 
+            class="productBtn"
+            type="button" 
+            id="totalPrice"
+            value="Show total price"
+            style ="width: 200px">
+    </div>
+
+    <footer>
+        <div>by Hoang Minh Tuan</div>
+        <div>ReDi school Front End 2 - 2020</div>
+    </footer>
+
+
+    <div class="js-cleaners-list">
+    <script>
+        let BoschCln = 
+            {
+                name: "Bosch BGC05A220A",
+                price: 125,
+                img: "./images/bosch.jpg",
+                rating: "⭐⭐⭐⭐",
+                optional: {
+                    liter: 1.5,
+                    color: "black, blue",
+                    electricSource: "strom",
+                    technology: "mit Fugendüse"    
+                }
+            };
+        let RowentaCln =
+            {
+                name: "Rowenta RO 3731EA Compact Power Cyclonic",
+                price: 145,
+                img: "./images/rowenta.jpg",
+                rating: "⭐⭐⭐⭐",
+                optional: {
+                    liter: 1.7,
+                    color: "blue, black",
+                    electricSource: "strom",
+                    technology: "mit HEPA filter"
+                }
+            };
+        let DysonCln = 
+            {
+                name: "Dyson Cyclone V10 Animal (226379-01)",
+                price: 450,
+                img: "./images/dyson.jpg",
+                rating: "⭐⭐⭐⭐⭐",
+                optional: {
+                    liter: 1.3,
+                    color: "red, purple",
+                    electricSource: "25,2V Akku",
+                    technology: "Zyklon"
+                }
+            };
+        let AegCln = 
+            {
+                name: "AEG CX7-2-S360 X Flexibility",
+                price: 385,
+                img: "./images/aeg.jpg",
+                rating: "⭐⭐⭐⭐⭐",
+                optional: {
+                    liter: 1.4,
+                    color: "gray, white",
+                    electricSource: "18V Lithium-Ionen Akku",
+                    technology: "Zyklon"
+                }
+            };
+
+        </script>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
