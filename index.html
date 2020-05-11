@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>List of Products</h3>
+        <div>
+            <span>Iphone</span> <br>
+            <span>Price: 900€</span>
+            <input 
+                for="2"
+                type="button" 
+                id="addPhoneToCart"
+                value="Add to shopping cart"
+            />
+        </div>
+        <br>
+        <div>
+            <span>Nintendo DS</span> <br>
+            <span>Price: 1200 €</span>
+            <input 
+                type="button" 
+                id="addNintendoToCart"
+                value="Add to shopping cart"
+            />
+        </div>
+        <br>
+        <div>
+            <span>MacBook Air</span> <br>
+            <span>Price: 3200 €</span>
+            <input 
+                type="button" 
+                id="addMacbookAirToCart"
+                value="Add to shopping cart"
+            />
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h3>Shopping Cart</h3>
+        <input 
+            type="button" 
+            id="showShoppingCart"
+            value="Show Shopping Cart Products"
+        />
+        <div id="shoppingCart">
+            <!-- Display shopping cart products -->
+        </div>
+        <h3>
+            Total Price
+        </h3>
+
+        <span id="total">
+            <!-- show total price -->
+        </span>
+        <input 
+            type="button" 
+            id="totalPrice"
+            value="Show total price">
+    </div>
+
+    <script>
+        // Get button's element
+        const addIphoneButton = document.getElementById("addPhoneToCart");
+        const addNintendoButton = document.getElementById("addNintendoToCart");
+        const addMacbookButton = document.getElementById("addMacbookAirToCart");
+        const showShoppingCartButton = document.getElementById("showShoppingCart");
+        const showTotalPriceButton = document.getElementById("totalPrice");
+        //create shoppingCart variable to store each product
+        const shoppingCart = [];
+
+        //function to add products to shoppingCart and update the quantity
+        function addIphoneToShoppingCart() {
+            const product = {
+                name:"Iphone",
+                price: 900
+            }
+            shoppingCart.push(product);
+            console.log("shoppingCart: ", shoppingCart);
+        }
+
+        function addNintendoToShoppingCart() {
+            const product = {
+                name:"Nintendo DS",
+                price: 1200
+            }
+            shoppingCart.push(product);
+            console.log("shoppingCart: ", shoppingCart);
+        }
+
+        function addMacbookToShoppingCart() {
+            const product = {
+                name:"Macbook Air",
+                price: 3200
+            }
+            shoppingCart.push(product);
+            console.log("shoppingCart: ", shoppingCart);
+        }
+        //function to display showShoppingCartProducts
+        function showShoppingCartProducts() {
+            const shoppingCartContainer = document.getElementById("shoppingCart");
+            shoppingCartContainer.innerHTML = '';
+            for(let i = 0; i < shoppingCart.length; i++) {
+                console.log(shoppingCart[i]);
+                const productContainer = document.createElement('div')           
+                productContainer.innerHTML = `
+                ${shoppingCart[i].name} <br/>
+                ${shoppingCart[i].price}
+                `;
+            shoppingCartContainer.appendChild(productContainer);
+        }}
+        //function to display totalPrice
+        function showTotalPrice() {
+            let sum = 0;
+            const priceCart = [];
+            const priceContainer = document.getElementById("total");
+            priceContainer.innerHTML = '';
+            for(let p = 0; p < shoppingCart.length; p++) {
+                let a = shoppingCart[p].price;
+                priceCart.push(a);
+                sum += a;
+                //display price of each product
+                const priceProduct = document.createElement('span')
+                priceProduct.innerHTML = `
+                ${a} <br>
+                `;
+                priceContainer.appendChild(priceProduct);
+                const priceSum = document.createElement('span')
+                priceSum.innerHTML = `
+                <h4>${sum}</h4>
+                `;
+                priceContainer.append(priceSum);
+            }
+            console.log(sum);
+            
+            // const priceContainer = document.getElementById("total");
+            // priceContainer.innerHTML = '';
+            // for(let p = 0; p < shoppingCart.length; p++) {
+            //     console.log(shoppingCart[p]);
+            //     const productPricePool = document.createElement('span');
+            //     productPricePool.innerHTML = `
+            //     ${shoppingCart[p].price} <br/>
+            //     `;
+            //     priceContainer.appendChild(productPricePool);
+            // }
+        }
+        //add event listener here
+        addIphoneButton.addEventListener('click', addIphoneToShoppingCart);
+        addNintendoButton.addEventListener('click', addNintendoToShoppingCart);
+        addMacbookButton.addEventListener('click', addMacbookToShoppingCart);
+        showShoppingCartButton.addEventListener('click', showShoppingCartProducts);
+        showTotalPriceButton.addEventListener('click', showTotalPrice);
+
+    </script>
+
+</body>
+</html>

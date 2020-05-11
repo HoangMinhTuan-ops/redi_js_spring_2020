@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lesson 8 - Loops</title>
+  </head>
+
+  <body>
+    <div>
+      <h3>List of Products</h3>
+      <div>
+        <span>Iphone</span><br />
+        <span>Price: 900 €</span>
+        <input
+          for="2"
+          type="button"
+          id="addPhoneToCart"
+          value="Add to shopping cart"
+        />
+      </div>
+      <br />
+      <div>
+        <span>Nintendo DS</span><br />
+        <span>Price: 1200 €</span>
+        <input
+          type="button"
+          id="addNintendoToCart"
+          value="Add to shopping car"
+        />
+      </div>
+      <br />
+      <div>
+        <span>MacBook Air</span><br />
+        <span>Price: 3200 €</span>
+        <input
+          type="button"
+          id="addMackbookToCart"
+          value="Add to shopping car"
+        />
+      </div>
+    </div>
+    <hr />
+    <div>
+      <h3>Shopping Cart</h3>
+      <input
+        type="button"
+        id="showShoppingCart"
+        value="Show Shopping Cart Products"
+      />
+      <div id="shoppingCart">
+        <!-- Display shopping cart products-->
+
+      </div>
+      <h3>
+        Total Price
+      </h3>
+
+      <span id="total">
+        <!-- show total price-->
+      </span>
+      <input type="button" id="totalPrice" value="Show total price" />
+    </div>
+
+    <script>
+      /*
+       * Shopping Cart
+       * Product:
+       *  name: 'Iphone'
+       *  price: 900
+       */
+
+      /*
+       * Get button's element
+       */
+      //add your code here
+      const addIphoneButton = document.getElementById("addPhoneToCart");
+      const addNintendoButton = document.getElementById("addNintendoToCart");
+      const addMacbookButton = document.getElementById("addMackbookToCart");
+      const showShoppingCartButton = document.getElementById("showShoppingCart");
+      /*
+       * create a shoppingCart variable to store each product object that you add to your shopping store. 
+       */
+      // Add you code here
+      const shoppingCart = [];
+      /*
+       * Add products to your shoppingCart store and update the quantity.
+       */
+      function addIphoneToShoppingCart() {
+        // add your code here
+        const product = {
+          name: "Iphone",
+          price: 900
+        }
+        shoppingCart.push(product);
+        console.log("shoppingCart: ", shoppingCart);
+        
+      }
+
+      function addNintendoToShoppingCart() {
+        // add your code here
+        const product = {
+          name: "Nintendo DS",
+          price: 1200
+        }
+        shoppingCart.push(product);
+        console.log("shoppingCart: ", shoppingCart);
+      }
+
+      function addMackbookToShoppingCart() {
+        // add your code here
+        const product = {
+          name: "Macbook Air",
+          price: 3200
+        }
+        shoppingCart.push(product);
+        console.log("shoppingCart: ", shoppingCart);
+      }
+
+      /*
+       * showShoppingCartProducts: Display the list of products when the user clicks on "Show shopping cart list" button.
+       */
+      function showShoppingCartProducts() {
+        // add your code here
+        const shoppingCartContainer = document.getElementById('shoppingCart');
+        shoppingCartContainer.innerHTML = '';
+        for(let i=0; i <= shoppingCart.length -1; i++) {
+            console.log(shoppingCart[i]);
+            const productContainer = document.createElement('div')
+            productContainer.innerHTML = `
+            ${shoppingCart[i].name} <br/>
+            ${shoppingCart[i].price}
+            `;
+            shoppingCartContainer.appendChild(productContainer);
+        }
+      }
+
+      /*
+       * BONUS
+       * showTotalPrice: Display the total price when the user clicks on "Show total Price" product.
+       */
+
+      function showTotalPrice() {
+        // add your code here
+        //get Element by ID --> show your total price
+        //let totalsum = 0
+        //for () {
+        // totalsum += price
+        // }
+
+
+      }
+
+      /*
+       * add Event Listener here
+       */
+      addIphoneButton.addEventListener('click', addIphoneToShoppingCart);
+      addNintendoButton.addEventListener('click', addNintendoToShoppingCart);
+      addMacbookButton.addEventListener('click', addMackbookToShoppingCart);
+      showShoppingCartButton.addEventListener('click', showShoppingCartProducts);
+    </script>
+  </body>
+</html>
+
